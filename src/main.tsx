@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { Provider } from "jotai/react";
@@ -11,7 +11,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <Provider>
       <ApolloProvider client={client}>
-        <RouterProvider router={router} />
+        <Suspense>
+          <RouterProvider router={router} />
+        </Suspense>
       </ApolloProvider>
     </Provider>
   </React.StrictMode>
