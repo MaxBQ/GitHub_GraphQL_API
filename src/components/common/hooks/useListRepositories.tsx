@@ -1,14 +1,14 @@
 import { useQuery } from "@apollo/client";
 import { QUERY_REPOSITORIES } from "../graphql/query";
 import { useEffect } from "react";
-import { IRepositoriesResponse } from "../interfaces/IRepositories";
+import { IRepositoriesResponse } from "../../Repositories/interfaces/IRepositories";
 import { useSetAtom } from "jotai";
-import { repositoryAtom } from "../store/storeRepositories";
+import { repositoryAtom } from "../../Repositories/store/storeRepositories";
 
 export const useListRepositories = () => {
   const { data } = useQuery<IRepositoriesResponse>(QUERY_REPOSITORIES, {
     variables: {
-      query: "is:public",
+      query: "is:public archived:false stars:>=5000 fork:true",
       type: "REPOSITORY",
       first: 10,
     },

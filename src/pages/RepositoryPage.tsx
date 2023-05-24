@@ -1,5 +1,7 @@
+import { Repository } from "../components/Repository";
+
 const RepositoryPage = () => {
-  return <div>Repository</div>;
+  return <Repository />;
 };
 
 export default RepositoryPage;

@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
         element: <RepositoriesPage />,
       },
       {
-        path: "/repository",
+        path: "/:owner/:name",
         element: <RepositoryPage />,
       },
     ],

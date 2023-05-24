@@ -4,6 +4,7 @@ export interface IRepositories {
   stargazerCount: number;
   updatedAt: string;
   url: string;
+  resourcePath: string;
 }
 
 export interface IRepositoriesResponse {

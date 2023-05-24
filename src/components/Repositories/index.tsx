@@ -1,9 +1,6 @@
-import { useQuery } from "@apollo/client";
-import { QUERY_REPOSITORIES } from "./graphql/query";
-import { useEffect } from "react";
 import { useAtomValue } from "jotai";
 import { repositoryAtom } from "./store/storeRepositories";
-import { useListRepositories } from "./hooks/useListRepositories";
+import { useListRepositories } from "../common/hooks/useListRepositories";
 import { Link } from "react-router-dom";
 
 export const Repositories = () => {
@@ -24,7 +21,9 @@ export const Repositories = () => {
               key={repository.id}
               className="flex  items-baseline justify-between border m-4 px-2 py-4 rounded-md border-slate-500"
             >
-              <li className="w-1/4 text-orange-300">{repository.name}</li>
+              <li className="w-1/4 text-orange-300">
+                <Link to={repository.resourcePath}>{repository.name}</Link>
+              </li>
               <li className="w-1/4">{repository.stargazerCount}</li>
               <li className="w-1/4">{repository.updatedAt}</li>
               <li className="w-1/4 text-orange-300">

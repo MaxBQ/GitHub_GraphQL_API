@@ -10,6 +10,7 @@ export const QUERY_REPOSITORIES = gql`
           stargazerCount
           updatedAt
           url
+          resourcePath
         }
       }
     }
