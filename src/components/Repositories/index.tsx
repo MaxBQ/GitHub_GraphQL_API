@@ -1,11 +1,11 @@
 import { useAtomValue } from "jotai";
-import { repositoryAtom } from "./store/storeRepositories";
+import { repositoriesAtom } from "./store/storeRepositories";
 import { useListRepositories } from "../common/hooks/useListRepositories";
 import { Link } from "react-router-dom";
 
 export const Repositories = () => {
   useListRepositories();
-  const repositories = useAtomValue(repositoryAtom);
+  const repositories = useAtomValue(repositoriesAtom);
   return (
     <div className="mx-auto text-center pb-4">
       <h1 className="p-4 text-left">Repositories</h1>

@@ -3,7 +3,7 @@ import { QUERY_REPOSITORIES } from "../graphql/query";
 import { useEffect } from "react";
 import { IRepositoriesResponse } from "../../Repositories/interfaces/IRepositories";
 import { useSetAtom } from "jotai";
-import { repositoryAtom } from "../../Repositories/store/storeRepositories";
+import { repositoriesAtom } from "../../Repositories/store/storeRepositories";
 
 export const useListRepositories = () => {
   const { data } = useQuery<IRepositoriesResponse>(QUERY_REPOSITORIES, {
@@ -13,7 +13,7 @@ export const useListRepositories = () => {
       first: 10,
     },
   });
-  const setRepositories = useSetAtom(repositoryAtom);
+  const setRepositories = useSetAtom(repositoriesAtom);
   useEffect(() => {
     if (data?.search.nodes.length) {
       setRepositories(data?.search.nodes);

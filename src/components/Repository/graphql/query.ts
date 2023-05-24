@@ -6,15 +6,18 @@ export const QUERY_REPOSITORY = gql`
       name
       stargazerCount
       updatedAt
+      url
       owner {
         avatarUrl
         url
+        login
       }
       description
       languages(first: $first) {
         totalCount
         nodes {
           name
+          color
         }
       }
     }
