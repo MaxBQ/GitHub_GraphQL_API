@@ -5,10 +5,12 @@ import { IRepositoriesResponse } from "../../Repositories/interfaces/IRepositori
 import { useSetAtom } from "jotai";
 import { repositoriesAtom } from "../../Repositories/store/storeRepositories";
 
-export const useListRepositories = (page: number) => {
+export const useListRepositories = (page: number, q?: string | null) => {
   const { data } = useQuery<IRepositoriesResponse>(QUERY_REPOSITORIES, {
     variables: {
-      query: "is:public archived:false stars:>=5000 fork:true",
+      query: `${
+        q?.length ? q : "is:public archived:false stars:>=5000 fork:true"
+      }`,
       type: "REPOSITORY",
       first: 100,
     },
