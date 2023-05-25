@@ -1,10 +1,20 @@
 import { useAtomValue } from "jotai";
 import { repositoriesAtom } from "./store/storeRepositories";
 import { useListRepositories } from "../common/hooks/useListRepositories";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { useLayoutEffect, useState } from "react";
+import { Pagination } from "../Pagination";
 
 export const Repositories = () => {
-  useListRepositories();
+  const [page, setPage] = useState<number>();
+  const { totalPage } = useListRepositories(page ? page : 1);
+  const [queryParams] = useSearchParams();
+
+  useLayoutEffect(() => {
+    if (queryParams.get("page")?.length) {
+      setPage(Number(queryParams.get("page")));
+    }
+  }, []);
   const repositories = useAtomValue(repositoriesAtom);
   return (
     <div className="mx-auto text-center pb-4">
@@ -32,6 +42,13 @@ export const Repositories = () => {
             </ul>
           ))
         : null}
+      {totalPage ? (
+        <Pagination
+          totalPage={totalPage}
+          initialPage={page ?? 1}
+          currantPage={(page: number) => setPage(page)}
+        />
+      ) : null}
     </div>
   );
 };

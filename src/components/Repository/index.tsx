@@ -2,7 +2,6 @@ import { useAtomValue } from "jotai";
 import { useRepository } from "./hooks/useRepository";
 import { repositoryAtom } from "./store/storeRepository";
 import { Link } from "react-router-dom";
-import { IRepository } from "./interfaces/IRepository";
 
 export const Repository = () => {
   const { loading } = useRepository();

@@ -13,6 +13,13 @@ export const QUERY_REPOSITORIES = gql`
           resourcePath
         }
       }
+      pageInfo {
+        endCursor
+        hasNextPage
+        hasPreviousPage
+        startCursor
+      }
+      repositoryCount
     }
   }
 `;

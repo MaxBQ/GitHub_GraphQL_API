@@ -15,7 +15,7 @@ export const useRepository = () => {
     variables: {
       owner,
       name,
-      first: 100,
+      first: 5,
     },
   });
   const setRepository = useSetAtom(repositoryAtom);
