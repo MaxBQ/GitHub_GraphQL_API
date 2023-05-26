@@ -12,3 +12,11 @@ export interface IRepositoriesResponse {
     nodes: IRepositories[];
   };
 }
+
+export interface IMyRepositoriesResponse {
+  viewer: {
+    repositories: {
+      nodes: IRepositories[];
+    };
+  };
+}

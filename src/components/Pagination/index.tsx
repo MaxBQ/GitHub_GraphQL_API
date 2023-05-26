@@ -27,11 +27,11 @@ export const Pagination = (props: IPaginationProps) => {
             <button
               key={ind}
               onClick={clickOn(ind + 1)}
-              className={`transition duration-150 hover:text-orange-200 hover:scale-105 hover:border-orange-200 border outline-none border-slate-500 rounded-md py-1 px-3 
+              className={`transition duration-150 hover:text-orange-200 hover:scale-105 hover:border-orange-200 border outline-none  rounded-md py-1 px-3 
               ${
                 currantPage === ind + 1
-                  ? "border-orange-200 text-orange-200 scale-105"
-                  : ""
+                  ? " text-orange-200 border-orange-200 scale-105"
+                  : "border-slate-500"
               }`}
             >
               {++ind}

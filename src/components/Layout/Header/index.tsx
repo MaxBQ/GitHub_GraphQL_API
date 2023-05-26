@@ -15,7 +15,7 @@ export const Header = () => {
         >
           Repo list
         </Link>
-        <h1 className="text-xl md:text-3xl">Is GitHub GraphQL API</h1>
+        <h1 className="text-xl md:text-3xl">This is GitHub GraphQL API</h1>
       </div>
     </header>
   );

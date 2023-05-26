@@ -23,3 +23,20 @@ export const QUERY_REPOSITORIES = gql`
     }
   }
 `;
+
+export const QUERY_REPOSITORIES_MY = gql`
+  query getRepositories($isFork: Boolean, $first: Int) {
+    viewer {
+      repositories(isFork: $isFork, first: $first) {
+        nodes {
+          id
+          name
+          stargazerCount
+          updatedAt
+          url
+          resourcePath
+        }
+      }
+    }
+  }
+`;
