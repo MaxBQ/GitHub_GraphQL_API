@@ -7,7 +7,7 @@ export const RepositoryDetail = ({
   repository: IRepository;
 }) => {
   return (
-    <div className="flex gap-10 items-center justify-center h-full">
+    <div className="flex flex-col md:flex-row gap-10 items-center justify-center h-full">
       {repository?.owner?.avatarUrl?.length ? (
         <img
           src={repository.owner.avatarUrl}
