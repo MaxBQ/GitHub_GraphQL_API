@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import {
   IMyRepositoriesResponse,
   IRepositoriesResponse,
-} from "../../Repositories/interfaces/IRepositories";
+} from "../interfaces/IRepositories";
 import { useSetAtom } from "jotai";
-import { repositoriesAtom } from "../../Repositories/store/storeRepositories";
+import { repositoriesAtom } from "../store/storeRepositories";
 
 export const useListRepositories = (page: number, q?: string | null) => {
   if (q?.length) {

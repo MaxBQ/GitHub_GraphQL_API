@@ -1,4 +1,4 @@
-import { Repository } from "../components/Repository";
+import { Repository } from "../modules/Repository";
 
 const RepositoryPage = () => {
   return <Repository />;

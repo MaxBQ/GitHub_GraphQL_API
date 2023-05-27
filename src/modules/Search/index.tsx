@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import { ChangeEvent, useEffect, useLayoutEffect, useState } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { searchAtom } from "./store";
 

@@ -1,10 +1,10 @@
 import { useAtomValue } from "jotai";
 import { repositoriesAtom } from "./store/storeRepositories";
-import { useListRepositories } from "../common/hooks/useListRepositories";
+import { useListRepositories } from "./hooks/useListRepositories";
 import { useSearchParams } from "react-router-dom";
 import { Pagination } from "../Pagination";
 import { Search } from "../Search";
-import { RepositoriesList } from "./RepositoriesList";
+import { RepositoriesList } from "./components/RepositoriesList";
 
 export const Repositories = () => {
   const [queryParams] = useSearchParams();

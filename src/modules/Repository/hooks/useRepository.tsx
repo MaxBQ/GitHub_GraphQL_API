@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { QUERY_REPOSITORY } from "../graphql/query";
 import { useLocation } from "react-router-dom";
-import { ownerName } from "../../common/helpers/pathnameOwnerName";
+import { ownerName } from "../../Repositories/helpers/pathnameOwnerName";
 import { useSetAtom } from "jotai";
 import { repositoryAtom } from "../store/storeRepository";
 import { useEffect } from "react";

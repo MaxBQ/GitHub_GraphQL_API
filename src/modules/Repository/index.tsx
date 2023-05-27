@@ -1,7 +1,7 @@
 import { useAtomValue } from "jotai";
 import { useRepository } from "./hooks/useRepository";
 import { repositoryAtom } from "./store/storeRepository";
-import { RepositoryDetail } from "./RepositoryDetail";
+import { RepositoryDetail } from "./components/RepositoryDetail";
 
 export const Repository = () => {
   const { loading } = useRepository();

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { IRepositories } from "./interfaces/IRepositories";
+import { IRepositories } from "../interfaces/IRepositories";
 
 export const RepositoriesList = ({
   repositories,
